@@ -31,7 +31,7 @@ jobs:
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
-        run: ./scripts/patch-android.sh
+        run: bash scripts/patch-android.sh
       - name: Sync web assets
         run: npx cap sync android
       - name: Build debug APK (install on your phone)
