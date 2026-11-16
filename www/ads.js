@@ -1,3 +1,20 @@
+// Navigation fixes for the native app (run everywhere, harmless in a browser).
+(function () {
+  var back = document.getElementById('back');
+  // Call back() directly; history.back() is unreliable here because iframe loads add history entries.
+  if (back && typeof window.back === 'function') back.onclick = function () { window.back(); };
+  var cap = window.Capacitor;
+  var App = cap && cap.isNativePlatform && cap.isNativePlatform() && cap.Plugins && cap.Plugins.App;
+  if (App) {
+    // Android back button: leave the open game, otherwise exit the app.
+    App.addListener('backButton', function () {
+      var fr = document.getElementById('fr');
+      if (fr && !fr.hidden && typeof window.back === 'function') window.back();
+      else App.exitApp();
+    });
+  }
+})();
+
 // AdMob integration: bottom banner + occasional interstitial at natural breaks.
 // Only runs inside the native Android app; does nothing in a normal browser.
 (function () {
