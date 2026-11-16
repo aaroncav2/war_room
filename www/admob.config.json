@@ -1,7 +1,7 @@
 {
-  "testMode": true,
-  "appId": "ca-app-pub-3940256099942544~3347511713",
-  "bannerId": "ca-app-pub-3940256099942544/6300978111",
-  "interstitialId": "ca-app-pub-3940256099942544/1033173712",
+  "testMode": false,
+  "appId": "ca-app-pub-3803404376404349~5733570106",
+  "bannerId": "ca-app-pub-3803404376404349/9888437534",
+  "interstitialId": "ca-app-pub-3803404376404349/6988997369",
   "interstitialCooldownSeconds": 180
 }
